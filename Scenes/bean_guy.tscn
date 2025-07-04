@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://2cotcr52u8tp"]
+
+[ext_resource type="Script" uid="uid://5vlsk21se128" path="res://Scripts/new_script.gd" id="1_gx8xv"]
+[ext_resource type="Texture2D" uid="uid://cbngcq5joj84g" path="res://Assets/epic_cool_guy.png" id="2_53u1f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w377u"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gx8xv"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_gx8xv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_w377u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_gx8xv")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.501)
+pixel_size = 0.005
+texture = ExtResource("2_53u1f")
